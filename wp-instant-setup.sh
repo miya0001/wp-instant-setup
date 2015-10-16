@@ -2,7 +2,7 @@
 
 set -ex;
 
-PORT=${1-localhost}
+PORT=${1-8080}
 DB_NAME=${2-wpdev}
 
 if [ -e "wp-config.php" ]; then
