@@ -23,7 +23,7 @@ PHP
 echo "WordPressをセットアップします。"
 wp core install \
 --url=http://127.0.0.1:$PORT \
---title=$WP_TITLE \
+--title="$WP_TITLE" \
 --admin_user="admin" \
 --admin_password="admin" \
 --admin_email="admin@example.com"
@@ -32,7 +32,7 @@ echo "パーマリンク設定を変更します。"
 wp rewrite structure "/archives/%post_id%"
 
 echo "オプションを設定します。"
-wp option update blogdescription $WP_DESC
+wp option update blogdescription "$WP_DESC"
 
 echo "プラグインをインストールします。"
 wp plugin install wp-multibyte-patch --activate
