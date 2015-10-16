@@ -13,5 +13,7 @@
 ## How to use
 
 ```
-
+$ mkdir ~/Desktop/wordpress
+$ cd ~/Desktop/wordpress
+$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/wp-instant-setup.sh | bash
 ```
