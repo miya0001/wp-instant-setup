@@ -13,24 +13,15 @@
 ### How to setup
 
 ```
-$ brew install php56
-$ brew install wp-cli
-$ brew install mysql
-$ mysql.server start
+$ brew install php56 wp-cli mysql && mysql.server start
 ```
 
 ## How to use
 
-Create a working directory.
+Create a working directory and move into it.
 
 ```
-$ mkdir ~/Desktop/wordpress
-```
-
-Move into the directory.
-
-```
-$ cd ~/Desktop/wordpress
+$ mkdir ~/Desktop/wordpress && cd $_
 ```
 
 Install and run WordPress.
