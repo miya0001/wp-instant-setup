@@ -6,7 +6,7 @@ PORT=${1-8080}
 DB_NAME=${2-wpdev}
 WP_PATH=$(pwd)/public_html
 
-if [ -e "$$WP_PATH/wp-config.php" ]; then
+if [ -e "$WP_PATH/wp-config.php" ]; then
     php -S 127.0.0.1:$PORT
     exit 0
 fi
