@@ -5,6 +5,11 @@ set -ex;
 PORT=${1-localhost}
 DB_NAME=${2-wpdev}
 
+if [ -e "wp-config.php" ]; then
+    php -S 127.0.0.1:$PORT
+    exit 0
+fi
+
 WP_TITLE="Welcome to the WordPress"
 WP_DESC="Hello World!"
 

@@ -10,6 +10,15 @@
 * MySQL
 * wp-cli
 
+### How to setup
+
+```
+$ brew install php56
+$ brew install wp-cli
+$ brew install mysql
+$ mysql.server start
+```
+
 ## How to use
 
 Create a working directory.
