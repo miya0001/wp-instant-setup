@@ -2,8 +2,8 @@
 
 set -ex;
 
-DB_NAME=wpdev
-PORT=8080
+PORT=${1-localhost}
+DB_NAME=${2-wpdev}
 
 WP_TITLE="Welcome to the WordPress"
 WP_DESC="Hello World!"

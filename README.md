@@ -12,8 +12,26 @@
 
 ## How to use
 
+Create a working directory.
+
 ```
 $ mkdir ~/Desktop/wordpress
+```
+
+Move into the directory.
+
+```
 $ cd ~/Desktop/wordpress
+```
+
+Install and run WordPress.
+
+```
 $ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/wp-instant-setup.sh | bash
+```
+
+Or
+
+```
+$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/wp-instant-setup.sh | bash -s <PORT> <DB_NAME>
 ```
