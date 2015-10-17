@@ -22,16 +22,13 @@ WP_DESC="Hello World!"
 echo "DROP DATABASE IF EXISTS $DB_NAME;" | mysql -u root
 echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u root
 
-echo "WordPressをダウンロードします。"
-php wp-cli.phar core download --path=$WP_PATH --locale=ja --force
+php wp-cli.phar core download --path=$WP_PATH --locale=en_US --force
 
-echo "wp-config.phpを作成します。"
 php wp-cli.phar core config --dbhost=localhost --dbname=$DB_NAME --dbuser=root --dbprefix=wp_ --locale=ja --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
 PHP
 
-echo "WordPressをセットアップします。"
 php wp-cli.phar core install \
 --url=http://127.0.0.1:$PORT \
 --title="$WP_TITLE" \
@@ -39,17 +36,10 @@ php wp-cli.phar core install \
 --admin_password="admin" \
 --admin_email="admin@example.com"
 
-echo "パーマリンク設定を変更します。"
 php wp-cli.phar rewrite structure "/archives/%post_id%"
 
-echo "オプションを設定します。"
 php wp-cli.phar option update blogdescription "$WP_DESC"
 
-echo "プラグインをインストールします。"
-php wp-cli.phar plugin install wp-multibyte-patch --activate
-php wp-cli.phar plugin install content-template-engine --activate
-
-echo "テーマをインストールします。"
 php wp-cli.phar theme install twentyfifteen --activate
 
 php -S 127.0.0.1:$PORT -t $WP_PATH
