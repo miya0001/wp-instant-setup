@@ -24,7 +24,7 @@ echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_c
 
 php wp-cli.phar core download --path=$WP_PATH --locale=en_US --force
 
-php wp-cli.phar core config --dbhost=localhost --dbname=$DB_NAME --dbuser=root --dbprefix=wp_ --locale=ja --extra-php <<PHP
+php wp-cli.phar core config --dbhost=localhost --dbname=$DB_NAME --dbuser=root --dbprefix=wp_ --locale=en_US --extra-php <<PHP
 define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
 PHP
