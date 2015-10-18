@@ -2,9 +2,9 @@
 
 set -ex;
 
-DB_NAME=${1-wpdev}
-DB_USER=${2-root}
-DB_PASS=$3
+DB_USER=${1-root}
+DB_PASS=$2
+DB_NAME=${3-wpdev}
 PORT=8080
 WP_PATH=$(pwd)/www
 WP_TITLE='Welcome to the WordPress'
