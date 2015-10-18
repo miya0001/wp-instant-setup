@@ -12,7 +12,7 @@ WP_DESC='Hello World!'
 
 if [ -e "$WP_PATH/wp-config.php" ]; then
     open http://127.0.0.1:$PORT
-    php -S 0.0.0.0:$PORT -t $WP_PATH
+    bin/wp server --host=0.0.0.0 --port=$PORT --docroot=$WP_PATH
     exit 0
 fi
 
@@ -74,4 +74,4 @@ bin/wp option update blogdescription "$WP_DESC"
 bin/wp theme install twentyfifteen --activate
 
 open http://127.0.0.1:$PORT
-php -S 0.0.0.0:$PORT -t $WP_PATH
+bin/wp server --host=0.0.0.0 --port=$PORT --docroot=$WP_PATH
