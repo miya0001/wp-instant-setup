@@ -11,12 +11,12 @@ WordPress development environment with PHP built-in web server + WP-CLI.
 
 ```
 $ mkdir ~/Desktop/wordpress && cd $_
-$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/wp-instant-setup.sh | bash
+$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/run.sh | bash
 ```
 
 Or
 
 ```
 $ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
-$ ./wp-instant-setup.sh
+$ ./run.sh
 ```
