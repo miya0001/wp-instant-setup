@@ -32,5 +32,5 @@ Or
 
 ```
 $ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
-$ ./run.sh wpdv root root
+$ ./run.sh wpdev root root
 ```
