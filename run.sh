@@ -11,6 +11,7 @@ WP_TITLE='Welcome to the WordPress'
 WP_DESC='Hello World!'
 
 if [ -e "$WP_PATH/wp-config.php" ]; then
+    open http://127.0.0.1:$PORT
     php -S 127.0.0.1:$PORT -t $WP_PATH
     exit 0
 fi
