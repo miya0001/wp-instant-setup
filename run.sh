@@ -22,7 +22,7 @@ rm -fr bin && mkdir bin
 mv wp-cli.phar bin/wp
 chmod 755 bin/wp
 
-echo "path: $WP_PATH" > $(pwd)/wp-cli.yml
+echo "path: www" > $(pwd)/wp-cli.yml
 
 if [ $DB_PASS ]; then
     echo "DROP DATABASE IF EXISTS $DB_NAME;" | mysql -u$DB_USER -p$DB_PASS
