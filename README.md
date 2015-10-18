@@ -17,6 +17,6 @@ $ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/wp-ins
 Or
 
 ```
-$ git clone git@github.com:miya0001/wp-instant-setup.git
+$ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
 $ ./wp-instant-setup.sh
 ```
