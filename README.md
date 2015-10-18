@@ -25,12 +25,12 @@ $ ./run.sh
 
 ```
 $ mkdir ~/Desktop/wordpress && cd $_
-$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/run.sh | bash -s wpdev root root
+$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/run.sh | bash -s root root wpdev
 ```
 
 Or
 
 ```
 $ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
-$ ./run.sh wpdev root root
+$ ./run.sh root root wpdev
 ```
