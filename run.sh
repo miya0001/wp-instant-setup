@@ -24,8 +24,13 @@ chmod 755 bin/wp
 
 echo "path: $WP_PATH" > $(pwd)/wp-cli.yml
 
-echo "DROP DATABASE IF EXISTS $DB_NAME;" | mysql -u root
-echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u root
+if [ $DB_PASS ]; then
+    echo "DROP DATABASE IF EXISTS $DB_NAME;" | mysql -u$DB_USER -p$DB_PASS
+    echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u$DB_USER -p$DB_PASS
+else
+    echo "DROP DATABASE IF EXISTS $DB_NAME;" | mysql -u$DB_USER
+    echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u$DB_USER
+fi
 
 bin/wp core download --path=$WP_PATH --locale=en_US --force
 

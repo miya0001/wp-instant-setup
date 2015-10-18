@@ -20,3 +20,17 @@ Or
 $ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
 $ ./run.sh
 ```
+
+### For MAMP users
+
+```
+$ mkdir ~/Desktop/wordpress && cd $_
+$ curl https://raw.githubusercontent.com/miya0001/wp-instant-setup/master/run.sh | bash -s wpdev root root
+```
+
+Or
+
+```
+$ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
+$ ./run.sh wpdv root root
+```
