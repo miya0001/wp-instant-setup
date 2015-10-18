@@ -67,4 +67,5 @@ bin/wp option update blogdescription "$WP_DESC"
 
 bin/wp theme install twentyfifteen --activate
 
+open http://127.0.0.1:$PORT
 php -S 127.0.0.1:$PORT -t $WP_PATH
