@@ -4,6 +4,7 @@ WordPress development environment with PHP built-in web server + WP-CLI.
 
 ## Requires
 
+* OSX
 * php 5.4 or later
 * MySQL
 
