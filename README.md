@@ -54,7 +54,7 @@ $ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
 $ ./run.sh root root
 ```
 
-## Defaut Account
+## Default Account
 
 * User: `admin`
 * Password: `admin`
