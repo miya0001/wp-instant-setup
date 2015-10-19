@@ -53,6 +53,11 @@ $ git clone git@github.com:miya0001/wp-instant-setup.git && cd wp-instant-setup
 $ ./run.sh root root
 ```
 
+## Defaut Account
+
+* User: `admin`
+* Password: `admin`
+
 ## Advanced Tips
 
 Add alias into your `~/.bash_profile` like following.
