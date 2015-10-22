@@ -71,29 +71,6 @@ bin/wp rewrite structure "/archives/%post_id%"
 bin/wp option update blogname "$WP_TITLE"
 bin/wp option update blogdescription "$WP_DESC"
 
-bin/wp theme install twentyfifteen --activate
-
-WP_MU_PUGINS_DIR=$(bin/wp eval 'echo WP_CONTENT_DIR;')/mu-plugins
-
-mkdir -p $WP_MU_PUGINS_DIR
-
-echo "{
-    \"name\": \"mu-plugins\",
-    \"require-dev\": {
-        \"vccw/mailcatcher\": \"*\"
-    }
-}" > ${WP_MU_PUGINS_DIR}/composer.json
-
-composer install --working-dir=$WP_MU_PUGINS_DIR
-
-echo "<?php
-/*
-Plugin Name: MailCatcher
-Author: VCCW Team
-Description: Re-routes all WordPress emails to MailCatcher.
-*/
-require_once dirname( __FILE__ ) . '/vendor/autoload.php';" > ${WP_MU_PUGINS_DIR}/mailcatcher.php
-
 if [ -e "provision-post.sh" ]; then
     bash provision-post.sh
 fi
