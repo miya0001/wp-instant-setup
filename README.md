@@ -110,7 +110,7 @@ $ gem install mailcatcher -- --with-cppflags=-I$(brew --prefix openssl)/include
 Run MailCatcher as a daemon.
 
 ```
-$ mailcatcher
+$ mailcatcher -b
 ```
 
 Then visit `http://127.0.0.1:1080/`
