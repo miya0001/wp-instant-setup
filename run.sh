@@ -17,9 +17,9 @@ if [ -e "$WP_PATH/wp-config.php" ]; then
 fi
 
 echo "Download wp-cli"
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar
 rm -fr bin && mkdir bin
-mv wp-cli.phar bin/wp
+mv wp-cli-nightly.phar bin/wp
 chmod 755 bin/wp
 
 echo "path: www" > $(pwd)/wp-cli.yml
