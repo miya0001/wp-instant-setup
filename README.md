@@ -7,6 +7,9 @@ WordPress development environment with PHP built-in web server + WP-CLI.
 * OSX
 * php 5.4 or later
 * MySQL
+
+### Recommend
+
 * [Composer](https://getcomposer.org/)
 * [Mailcatcher](http://mailcatcher.me/)
 
