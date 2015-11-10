@@ -12,6 +12,22 @@ WP_PATH=$(pwd)/www
 WP_TITLE='Welcome to the WordPress'
 WP_DESC='Hello World!'
 
+function parse_yaml () {
+   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
+   sed -ne "s|^\($s\)\($w\)$s:$s\"\(.*\)\"$s\$|\1$fs\2$fs\3|p" \
+        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  $1 |
+   awk -F$fs '{
+      indent = length($1)/2;
+      vname[indent] = $2;
+      for (i in vname) {if (i > indent) {delete vname[i]}}
+      if (length($3) > 0) {
+         vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
+         printf("%s%s=\"%s\"\n", vn, $2, $3);
+      }
+   }'
+   return 0
+}
+
 if [ -e "$WP_PATH/wp-config.php" ]; then
     open http://127.0.0.1:$PORT
     bin/wp server --host=0.0.0.0 --port=$PORT --docroot=$WP_PATH
