@@ -2,8 +2,6 @@
 
 set -ex;
 
-mysql.server start
-
 DB_USER=${1-root}
 DB_PASS=$2
 DB_NAME=${3-wpdev}
