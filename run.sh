@@ -18,18 +18,11 @@ fi
 
 echo "path: www" > $(pwd)/wp-cli.yml
 
-if [ $DB_PASS ]; then
-    echo "DROP DATABASE IF EXISTS $DB_NAME;" | mysql -u$DB_USER -p$DB_PASS
-    echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u$DB_USER -p$DB_PASS
-else
-    echo "DROP DATABASE IF EXISTS $DB_NAME;" | mysql -u$DB_USER
-    echo "CREATE DATABASE $DB_NAME DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u$DB_USER
-fi
-
 wp core download --path=$WP_PATH --locale=en_US --version=trunk --force
 
 if [ $DB_PASS ]; then
 wp config create \
+--skip-check \
 --dbhost=localhost \
 --dbname="$DB_NAME" \
 --dbuser="$DB_USER" \
@@ -42,6 +35,7 @@ define( 'WP_DEBUG', true );
 PHP
 else
 wp config create \
+--skip-check \
 --dbhost=localhost \
 --dbname=$DB_NAME \
 --dbuser=$DB_USER \
@@ -52,6 +46,8 @@ define( 'JETPACK_DEV_DEBUG', true );
 define( 'WP_DEBUG', true );
 PHP
 fi
+
+wp db create || wp db reset --yes
 
 wp core install \
 --url=http://127.0.0.1:$PORT \
